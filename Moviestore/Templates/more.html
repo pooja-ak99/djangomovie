@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+
+{% block content %}
+
+<div class="row">
+    <div class="col-6 ps-5">
+<!--<div style="position:absolute;left:20px">-->
+<img src="{{films.cover.url}}" style="height:400px;width:350px;"><br>
+<h2 style="color:red"><b>{{films.title}}</b></h2><br>
+<h5>Year: {{films.year}}</h5>
+<p> {{films.about}}</p>
+</div>
+
+    <div class="col-6">
+<!--<div style="position:absolute;right:20px">-->
+    <p>      CLICK TO EDIT OR DELETE      </p>
+<a class="btn btn-warning" href="{% url 'edit' films.id %}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="btn btn-danger" href="{% url 'delete' films.id %}">Delete</a>
+
+<!--</div>-->
+        </div>
+</div>
+{% endblock %}
+
+</html>
